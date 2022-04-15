@@ -2,8 +2,10 @@ import React from 'react';
 import Card from './Card';
 
 const Cards = (props) => {
-    const [clicked, setClicket] = React.useState("false");
-
+    const [clicked, setClicked] = React.useState(false);
+    const handleClick = () => {
+        setClicked(!clicked);
+    }
     return (
         <div>
             {props.pokemons.map(pokemon =>
@@ -16,7 +18,7 @@ const Cards = (props) => {
                     weight={pokemon.weight}
                     height={pokemon.height}
                     clicked={clicked}
-                    onClick={() => setClicket("true")}
+                    onClick={handleClick}
                 />
             )}
         </div>
