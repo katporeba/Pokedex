@@ -8,6 +8,10 @@
     z-index: 0;
     filter: drop-shadow(0px 4px 30px rgba(129, 139, 150, 0.35));
     cursor: pointer;
+    transition: transform 0.5s;
+    backface-visibility: hidden;
+    transition-timing-function: ease;
+    -webkit-font-smoothing: subpixel-antialiased;
 }
 
 .card::after {
@@ -25,7 +29,7 @@
 
 .card:hover {
     transform: scale(1.05);
-    filter: drop-shadow(0px 4px 30px rgba(129, 139, 150, 0.5));
+    filter: drop-shadow(0px 4px 30px rgba(129, 139, 150, 0.4));
 }
 
 .card img {
@@ -42,6 +46,7 @@
 
 .text {
     padding: 20px;
+    white-space: nowrap;
 }
 
 .text:first-child {

@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from "react";
 import Cards from "./components/Cards";
 import MainLogo from "./img/logo.svg";
+import Button from "./components/Button";
+import "./App.css";
 
 const App = () => {
     const  [hasError, setErrors] =  useState(false);
@@ -31,7 +33,7 @@ const App = () => {
       <div className={"container"}>
           <img src={MainLogo} className={"main-logo"} alt={"main-logo"}/>
           {!hasError && <Cards pokemons={pokemons}/>}
-          <button onClick={() => getData()}>Show more pokemons</button>
+          <Button className={"button-load"} onClick={getData} text={"Show more"}/>
       </div>
   )
 }
