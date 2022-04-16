@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import Cards from "./components/Cards";
 import MainLogo from "./img/logo.svg";
 import Button from "./components/Button";
+import Form from "./components/Form";
 import "./App.css";
 
 const App = () => {
@@ -32,6 +33,7 @@ const App = () => {
   return (
       <div className={"container"}>
           <img src={MainLogo} className={"main-logo"} alt={"main-logo"}/>
+          <Form />
           {!hasError && <Cards pokemons={pokemons}/>}
           <Button className={"button-load"} onClick={getData} text={"Show more"}/>
       </div>

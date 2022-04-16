@@ -1,0 +1,102 @@
+.form {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    margin-right: 20em;
+    padding: 2em 0 4em;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #B7BBC5;
+    opacity: 1; /* Firefox */
+    font-family: 'Poppins', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #B7BBC5;
+    font-family: 'Poppins', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: #B7BBC5;
+    font-family: 'Poppins', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.name {
+    color: #B7BBC5;
+    background-color: #FFFFFF;
+    box-shadow: 0 40px 40px rgba(208, 221, 239, 0.36);
+    border-radius: 30px;
+    padding: 0.5em 1em;
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+}
+
+.name input{
+    border: none;
+    background: none;
+    font-family: 'Poppins', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #B7BBC5;
+    padding-left: 1em;
+}
+
+.type {
+    margin-left: 2em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 150px;
+    color: #FFFFFF;
+    background: linear-gradient(180deg, #FF8181 0%, #FF6363 100%);
+    box-shadow: 0 40px 40px rgba(208, 221, 239, 0.36);
+    border-radius: 30px;
+}
+
+.type select {
+    /*A reset of styles, including removing the default dropdown arrow*/
+    appearance: none;
+    /* Additional resets for further consistency*/
+    background-color: transparent;
+    border: none;
+    margin: 0;
+    padding: 0;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: inherit;
+    line-height: inherit;
+    color: #FFFFFF;
+    margin-right: 1em;
+}
+
+.type * {
+    padding: 0.5em 1em;
+}
