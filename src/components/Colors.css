@@ -1,0 +1,76 @@
+.grass {
+  background: linear-gradient(180deg, #6EC151 0%, #5FDB33 100%);
+}
+.grass .firstIcon {
+  background-color: #6EC151 !important;
+}
+
+.fire {
+  background: linear-gradient(180deg, #E36F6F 0%, #FF6363 100%);
+}
+.fire .firstIcon {
+  background-color: #E36F6F !important;
+}
+
+.water {
+  background: linear-gradient(180deg, #6FA4E3 0%, #3793FF 100%);
+}
+.water .firstIcon {
+  background-color: #6FA4E3 !important;
+}
+
+.bug {
+  background: linear-gradient(180deg, #C19B51 0%, #DB8E33 100%);
+}
+.bug .firstIcon {
+  background-color: #C19B51 !important;
+}
+
+.fairy {
+  background: linear-gradient(180deg, #F4BDC9 0%, #F4D3B7 100%);
+}
+.fairy .firstIcon {
+  background-color: #F4BDC9 !important;
+}
+
+.ghost,.rock {
+  background: linear-gradient(180deg, #4B5265 0%, #1A1F2D 100%);
+}
+.ghost .firstIcon, .rock .firstIcon {
+  background-color: #4B5265 !important;
+}
+
+.poison {
+  background: linear-gradient(180deg, #7551C1 0%, #6933DB 100%);
+}
+.poison .firstIcon {
+  background-color: #7551C1 !important;
+}
+
+.electric {
+  background: linear-gradient(180deg, #F7D02C 0%, #F7D02C 100%);
+}
+.electric .firstIcon {
+  background-color: #F7D02C !important;
+}
+
+.ground {
+  background: linear-gradient(180deg, #86603f 0%, #9d6a3c 100%);
+}
+.ground .firstIcon {
+  background-color: #86603f !important;
+}
+
+.fighting {
+  background: linear-gradient(180deg, #C22E28 0%, #D02F2F 100%);
+}
+.fighting .firstIcon {
+  background-color: #C22E28 !important;
+}
+
+.psychic {
+  background: linear-gradient(180deg, #F95587 0%, #FF6363 100%);
+}
+.psychic .firstIcon {
+  background-color: #F95587 !important;
+}

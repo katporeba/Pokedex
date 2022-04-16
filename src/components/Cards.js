@@ -1,13 +1,15 @@
 import React from 'react';
 import Card from './Card';
+import classes from './Cards.module.css';
 
 const Cards = (props) => {
     const [clicked, setClicked] = React.useState(false);
     const handleClick = () => {
         setClicked(!clicked);
     }
+
     return (
-        <div>
+        <div className={classes.cards}>
             {props.pokemons.map(pokemon =>
                 <Card
                     key={pokemon.id}

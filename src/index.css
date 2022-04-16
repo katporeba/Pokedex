@@ -1,0 +1,11 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', serif;
+    background: url("./img/background.png"), linear-gradient(180deg, #F9FBFF 0%, #F2F7FF 100%);
+    background-repeat: no-repeat;
+    background-size: 100vw;
+}
+
+.main-logo {
+    margin: 2em;
+}
