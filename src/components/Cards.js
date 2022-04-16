@@ -10,7 +10,7 @@ const Cards = (props) => {
                     key={pokemon.id}
                     id={pokemon.id}
                     name={pokemon.name}
-                    type={pokemon.types[0].type.name}
+                    type={pokemon.types}
                     image={pokemon.sprites.other.home.front_default}
                     weight={pokemon.weight}
                     height={pokemon.height}
