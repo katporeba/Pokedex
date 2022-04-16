@@ -5,8 +5,13 @@ import {faArrowUpLong, faScaleBalanced, faSeedling, faHandPointer} from "@fortaw
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Card = (props) => {
+    const [clicked, setClicked] = React.useState(false);
+    const handleClick = () => {
+        setClicked(!clicked);
+    }
+
     return (
-        <div onClick={props.onClick} className={[classes.card, props.type].join(' ')} id={props.id} >
+        <div onClick={handleClick} className={[classes.card, props.type].join(' ')} id={props.id} >
             <div className={classes.header}>
                 <div className={classes.text}>
                     <div className={classes.pokemonId}>#{props.id}</div>
@@ -20,7 +25,7 @@ const Card = (props) => {
                     <FontAwesomeIcon icon={faSeedling} className={[classes.icons, classes.firstIcon, 'firstIcon'].join(' ')}/>
                     {props.type}
                 </div>
-                {props.clicked ?
+                {clicked ?
                     <>
                         <div className={classes.weight}>
                             <FontAwesomeIcon icon={faScaleBalanced} className={classes.icons}/>
