@@ -20,8 +20,40 @@
     flex-direction: row;
     align-items: center;
     margin: 0 auto;
-    padding-left: 5em;
+    padding: 2em 4em 4em 4em;
     width: 100%;
     justify-content: center;
     align-content: center;
+}
+
+.loading {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+
+.loading img{
+    width: 150px;
+    height: 150px;
+    animation: spin 1.2s ease-in-out infinite;
+}
+
+@media screen and (max-width: 600px) {
+    .container-form {
+        flex-direction: row;
+        width: 100vw;
+        flex-wrap: wrap;
+        align-items: start;
+        padding:1em;
+    }
+}
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
 }

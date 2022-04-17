@@ -3,6 +3,7 @@ import {faArrowsRotate, faCloudMoon} from "@fortawesome/free-solid-svg-icons";
 import Cards from "./components/Cards";
 import LogoDark from "./img/logo-dark.svg";
 import LogoLight from "./img/logo-light.svg";
+import Loader from "./img/loader.svg";
 import Button from "./components/Button";
 import Refresh from "./components/Refresh";
 import Form from "./components/Form";
@@ -18,8 +19,8 @@ const App = () => {
     const [loading, setLoading] = useState(true);
     const [reset, setReset] = useState(false);
 
-    const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const [theme, setTheme] = useLocalStorage('theme', defaultDark ? 'dark' : 'light');
+    const defaultLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+    const [theme, setTheme] = useLocalStorage('theme', defaultLight ? 'dark' : 'light');
 
     const getData = async () => {
         try {
@@ -57,11 +58,10 @@ const App = () => {
                 setPokemons(() => [data]);
             }
             if (name === '' && type) {
-                console.log(type);
                 setPokemons([]);
+                setLoading(true);
                 const response = await fetch("https://pokeapi.co/api/v2/type/" + type);
                 const data = await response.json();
-                console.log(data.pokemon);
                 for (const pokemon of data.pokemon) {
                     const response = await fetch(pokemon.pokemon.url);
                     const dataOfPokemon = await response.json();
@@ -80,7 +80,6 @@ const App = () => {
     }
 
     const switchTheme = () => {
-        console.log(theme);
         setTheme(theme === 'light' ? 'dark' : 'light');
     }
 
@@ -88,7 +87,7 @@ const App = () => {
       <div className={"container"} data-theme={theme}>
           <img className={"main-logo"} src={theme === 'dark' ? LogoLight : LogoDark} alt={"logo"}/>
           {loading ?
-              <div className={"loading"}>Loading</div> :
+              <div className={"loading"}><img src={Loader} alt={"loader"}/></div> :
               <>{!hasError ?
                   <>
                       <div className={"container-form"}>
@@ -97,12 +96,12 @@ const App = () => {
                           <Form filterPokemons={filterPokemons}/>
                       </div>
                       <Cards pokemons={pokemons}/>
+                      <Button onClick={getData} text={"Show more"}/>
                   </>
                   :
                   <div className={"error"}>404</div>}
               </>
           }
-          <Button onClick={getData} text={"Show more"}/>
       </div>
   )
 }
