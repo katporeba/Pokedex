@@ -3,8 +3,7 @@
 ![alt text](./views/3.png)  
 ![alt text](./views/4.png)  
 ![alt text](./views/5.png)   
-
-#Pokedex
+  
 **Katarzyna Poręba**   
 katarzynaporeba@icloud.com 
 ---
