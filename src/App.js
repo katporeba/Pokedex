@@ -99,7 +99,7 @@ const App = () => {
                       <Button onClick={getData} text={"Show more"}/>
                   </>
                   :
-                  <div className={"error"}>404</div>}
+                  <h1 className={"error"}>404</h1>}
               </>
           }
       </div>
