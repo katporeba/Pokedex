@@ -1,8 +1,8 @@
 import React from 'react';
-import classes from "./Refresh.module.css";
+import classes from "./SmallButton.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const Refresh = (props) => {
+const SmallButton = (props) => {
     return (
         <button className={classes.refresh} onClick={() => props.onClick()}>
             <FontAwesomeIcon icon={props.icon}/>
@@ -10,4 +10,4 @@ const Refresh = (props) => {
     );
 };
 
-export default Refresh;
+export default SmallButton;

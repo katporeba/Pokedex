@@ -5,7 +5,7 @@ import LogoDark from "./img/logo-dark.svg";
 import LogoLight from "./img/logo-light.svg";
 import Loader from "./img/loader.svg";
 import Button from "./components/Button";
-import Refresh from "./components/Refresh";
+import SmallButton from "./components/SmallButton";
 import Form from "./components/Form";
 import "./App.css";
 import useLocalStorage from 'use-local-storage'
@@ -91,8 +91,8 @@ const App = () => {
               <>{!hasError ?
                   <>
                       <div className={"container-form"}>
-                          <Refresh onClick={getData} icon={faArrowsRotate}/>
-                          <Refresh onClick={switchTheme} icon={faCloudMoon}/>
+                          <SmallButton onClick={getData} icon={faArrowsRotate}/>
+                          <SmallButton onClick={switchTheme} icon={faCloudMoon}/>
                           <Form filterPokemons={filterPokemons}/>
                       </div>
                       <Cards pokemons={pokemons}/>
