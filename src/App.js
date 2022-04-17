@@ -40,6 +40,7 @@ const App = () => {
             setLoading(false);
             setErrors(false);
         } catch (error) {
+            setLoading(false);
             setErrors(error);
         }
     }
@@ -75,6 +76,7 @@ const App = () => {
                 setReset(true);
             }
         } catch (error) {
+            setLoading(false);
             setErrors(error);
         }
     }
