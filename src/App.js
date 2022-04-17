@@ -1,10 +1,14 @@
 import React, {useState, useEffect} from "react";
+import {faArrowsRotate, faCloudMoon} from "@fortawesome/free-solid-svg-icons";
 import Cards from "./components/Cards";
-import MainLogo from "./img/logo.svg";
+import LogoDark from "./img/logo-dark.svg";
+import LogoLight from "./img/logo-light.svg";
 import Button from "./components/Button";
 import Refresh from "./components/Refresh";
 import Form from "./components/Form";
 import "./App.css";
+import useLocalStorage from 'use-local-storage'
+
 
 const App = () => {
     const url = "https://pokeapi.co/api/v2/pokemon?limit=20&offset=0";
@@ -13,6 +17,9 @@ const App = () => {
     const [nextPokemons, setNextPokemons] = useState(url);
     const [loading, setLoading] = useState(true);
     const [reset, setReset] = useState(false);
+
+    const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const [theme, setTheme] = useLocalStorage('theme', defaultDark ? 'dark' : 'light');
 
     const getData = async () => {
         try {
@@ -49,7 +56,7 @@ const App = () => {
                 const data = await response.json();
                 setPokemons(() => [data]);
             }
-            if (name === '' && type !== 'All') {
+            if (name === '' && type) {
                 console.log(type);
                 setPokemons([]);
                 const response = await fetch("https://pokeapi.co/api/v2/type/" + type);
@@ -61,27 +68,32 @@ const App = () => {
                     setPokemons(pokemons => [...pokemons, dataOfPokemon]);
                 }
             }
-            if((name === '' && type !== 'All') || name) {
+            if(type || name) {
                 setNextPokemons(url)
                 setLoading(false);
                 setErrors(false);
                 setReset(true);
             }
-
         } catch (error) {
             setErrors(error);
         }
     }
 
+    const switchTheme = () => {
+        console.log(theme);
+        setTheme(theme === 'light' ? 'dark' : 'light');
+    }
+
   return (
-      <div className={"container"}>
-          <img src={MainLogo} className={"main-logo"} alt={"main-logo"}/>
+      <div className={"container"} data-theme={theme}>
+          <img className={"main-logo"} src={theme === 'dark' ? LogoLight : LogoDark} alt={"logo"}/>
           {loading ?
               <div className={"loading"}>Loading</div> :
               <>{!hasError ?
                   <>
                       <div className={"container-form"}>
-                          <Refresh onClick={getData}/>
+                          <Refresh onClick={getData} icon={faArrowsRotate}/>
+                          <Refresh onClick={switchTheme} icon={faCloudMoon}/>
                           <Form filterPokemons={filterPokemons}/>
                       </div>
                       <Cards pokemons={pokemons}/>

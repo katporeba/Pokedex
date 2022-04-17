@@ -1,5 +1,5 @@
 .refresh {
-    background-color: #ccd5e1;
+    background-color: var(--back-refresh);
     border-radius: 30px;
     border: none;
     color: #FFFFFF;
@@ -10,8 +10,8 @@
     height: 50px;
     width: 100px;
     align-self: start;
-    margin: 2em 0 0 5%;
-    filter: drop-shadow(0px 30px 40px rgba(0, 117, 255, 0.23));
+    margin: 2em 0 0 1em;
+    filter: var(--drop-button);
     transition: width 1s;
     transition-timing-function: ease;
     backface-visibility: hidden;
@@ -23,6 +23,5 @@
 
 .refresh:hover {
     transform: scale(1.05);
-    filter: drop-shadow(0px 30px 40px rgba(0, 117, 255, 0.30));
     width: 120px;
 }

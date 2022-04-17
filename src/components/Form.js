@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Form = (props) => {
     const [name, setName] = React.useState("");
-    const [type, setType] = React.useState("All");
+    const [type, setType] = React.useState("bug");
 
     const onSubmit = async (e) => {
         e.preventDefault();
@@ -14,7 +14,7 @@ const Form = (props) => {
 
     // TODO: get types from fetch
     const types = [
-        "all", "bug", "dark", "dragon", "electric", "fairy", "fighting", "fire", "flying", "ghost", "grass", "ground", "ice", "normal", "poison", "psychic", "rock", "steel", "water"
+        "bug", "dark", "dragon", "electric", "fairy", "fighting", "fire", "flying", "ghost", "grass", "ground", "ice", "normal", "poison", "psychic", "rock", "steel", "water"
     ];
 
     const createOptions = () => {
